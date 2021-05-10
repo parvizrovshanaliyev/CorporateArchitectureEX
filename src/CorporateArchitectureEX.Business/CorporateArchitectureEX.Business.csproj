@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\" />
-    <Folder Include="Abstract\" />
+    <ProjectReference Include="..\CorporateArchitectureEX.DataAccess\CorporateArchitectureEX.DataAccess.csproj" />
+    <ProjectReference Include="..\CorporateArchitectureEX.Entities\CorporateArchitectureEX.Entities.csproj" />
   </ItemGroup>
 
 </Project>

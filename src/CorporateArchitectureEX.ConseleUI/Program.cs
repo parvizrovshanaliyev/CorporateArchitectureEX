@@ -1,4 +1,6 @@
 ﻿using System;
+using CorporateArchitectureEX.Business.Concrete;
+using CorporateArchitectureEX.DataAccess.Concrete.InMemory;
 
 namespace CorporateArchitectureEX.ConseleUI
 {
@@ -6,7 +8,12 @@ namespace CorporateArchitectureEX.ConseleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ProductManager productManager = new ProductManager(new InMemoryProductDal());
+
+            foreach (var item in productManager.GetAll())
+            {
+                Console.WriteLine(item.ProductName);
+            }
         }
     }
 }
