@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\EF\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CorporateArchitectureEX.Entities\CorporateArchitectureEX.Entities.csproj" />
   </ItemGroup>
 

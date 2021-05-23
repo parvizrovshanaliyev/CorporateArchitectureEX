@@ -3,7 +3,7 @@ using CorporateArchitectureEX.Entities.Concrete;
 
 namespace CorporateArchitectureEX.DataAccess.Abstract
 {
-    public interface IProductDal
+    public interface IProductDal:IEntityRepository<Product>
     {
         
     }
