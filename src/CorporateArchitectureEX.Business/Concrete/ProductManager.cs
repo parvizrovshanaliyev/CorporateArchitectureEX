@@ -5,6 +5,7 @@ using CorporateArchitectureEX.Entities.Concrete;
 
 namespace CorporateArchitectureEX.Business.Concrete
 {
+    // Solid Dependency inversion
     public class ProductManager : IProductService
     {
         private readonly IProductDal _productDal;
@@ -21,6 +22,16 @@ namespace CorporateArchitectureEX.Business.Concrete
         public List<Product> GetAll()
         {
             return _productDal.GetAll();
+        }
+
+        public List<Product> GetAllByCategory(int id)
+        {
+            return _productDal.GetAll(i => i.CategoryID == id);
+        }
+
+        public List<Product> GeByUnitPrice(decimal min, decimal max)
+        {
+            return _productDal.GetAll(i => i.UnitPrice >= min && i.UnitPrice<=max);
         }
 
         #endregion
