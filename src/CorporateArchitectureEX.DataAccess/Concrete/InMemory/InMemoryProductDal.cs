@@ -19,11 +19,11 @@ namespace CorporateArchitectureEX.DataAccess.Concrete.InMemory
         {
             _products = new List<Product>
             {
-                new Product{ProductId = 1,CategoryId = 1,ProductName = "Cup",UnitPrice = 15,UnitInStock = 15},
-                new Product{ProductId = 2,CategoryId = 1,ProductName = "Camera",UnitPrice = 500,UnitInStock = 3},
-                new Product{ProductId = 3,CategoryId = 2,ProductName = "Phone",UnitPrice = 1400,UnitInStock = 2},
-                new Product{ProductId = 4,CategoryId = 3,ProductName = "Keyboard",UnitPrice = 235,UnitInStock = 25},
-                new Product{ProductId = 5,CategoryId = 5,ProductName = "Mouse",UnitPrice = 85,UnitInStock = 1}
+                new Product{ProductID = 1,CategoryID = 1,ProductName = "Cup",UnitPrice = 15,UnitsInStock = 15},
+                new Product{ProductID = 2,CategoryID = 1,ProductName = "Camera",UnitPrice = 500,UnitsInStock = 3},
+                new Product{ProductID = 3,CategoryID = 2,ProductName = "Phone",UnitPrice = 1400,UnitsInStock = 2},
+                new Product{ProductID = 4,CategoryID = 3,ProductName = "Keyboard",UnitPrice = 235,UnitsInStock = 25},
+                new Product{ProductID = 5,CategoryID = 5,ProductName = "Mouse",UnitPrice = 85,UnitsInStock = 1}
             };
         }
         #endregion
@@ -51,27 +51,27 @@ namespace CorporateArchitectureEX.DataAccess.Concrete.InMemory
 
         public void Update(Product product)
         {
-            Product productToUpdate = _products.SingleOrDefault(i => i.ProductId == product.ProductId);
+            Product productToUpdate = _products.SingleOrDefault(i => i.ProductID == product.ProductID);
 
             if (productToUpdate != null)
             {
-                productToUpdate.CategoryId = product.CategoryId;
+                productToUpdate.CategoryID = product.CategoryID;
                 productToUpdate.ProductName = product.ProductName;
-                productToUpdate.UnitInStock = product.UnitInStock;
+                productToUpdate.UnitsInStock = product.UnitsInStock;
                 productToUpdate.UnitPrice = product.UnitPrice;
             }
         }
 
         public void Delete(Product product)
         {
-            Product productToDelete = _products.SingleOrDefault(i => i.ProductId == product.ProductId);
+            Product productToDelete = _products.SingleOrDefault(i => i.ProductID == product.ProductID);
 
             _products.Remove(productToDelete);
         }
 
         public List<Product> GetAllByCategory(int categoryId)
         {
-            return _products.Where(i => i.CategoryId == categoryId).ToList();
+            return _products.Where(i => i.CategoryID == categoryId).ToList();
         }
 
         #endregion
